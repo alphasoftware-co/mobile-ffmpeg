@@ -442,48 +442,11 @@ ${SED_INLINE} 's/static int av_log_level/__thread int av_log_level/g' ${BASEDIR}
     --as="${AS}" \
     --ranlib="${RANLIB}" \
     --strip="${STRIP}" \
-    ${NEON_FLAG} \
     --enable-cross-compile \
-    --enable-pic \
-    ${ARCH_OPTIONS} \
-    --enable-inline-asm \
-    --enable-optimizations \
-    --enable-swscale \
-    ${BUILD_LIBRARY_OPTIONS} \
-    ${SIZE_OPTIONS}  \
-    --disable-v4l2-m2m \
-    --disable-outdev=v4l2 \
-    --disable-outdev=fbdev \
-    --disable-outdev=audiotoolbox \
-    --disable-indev=v4l2 \
-    --disable-indev=fbdev \
-    --disable-openssl \
-    --disable-xmm-clobber-test \
-    ${DEBUG_OPTIONS} \
-    --disable-neon-clobber-test \
-    --disable-programs \
-    --disable-postproc \
-    --disable-doc \
-    --disable-htmlpages \
-    --disable-manpages \
-    --disable-podpages \
-    --disable-txtpages \
-    --disable-sndio \
-    --disable-schannel \
-    --disable-securetransport \
-    --disable-xlib \
-    --disable-cuda \
-    --disable-cuvid \
-    --disable-nvenc \
-    --disable-vaapi \
-    --disable-vdpau \
-    --disable-appkit \
-    --disable-alsa \
-    --disable-cuda \
-    --disable-cuvid \
-    --disable-nvenc \
-    --disable-vaapi \
-    --disable-vdpau \
+    --pkg-config-flags=--static \
+    --enable-static \
+    --disable-shared \
+    --disable-ffplay \
     ${CONFIGURE_POSTFIX} 1>>${BASEDIR}/build.log 2>&1
 
 if [ $? -ne 0 ]; then
